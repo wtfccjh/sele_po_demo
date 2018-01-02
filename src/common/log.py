@@ -1,5 +1,5 @@
 import logging
-from src.config import parameter
+from config import parameter
 
 
 

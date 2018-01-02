@@ -1,7 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 import log
-from src.config.parameter import img_path
+from config.parameter import img_path
 
 
 
@@ -39,7 +39,7 @@ class BasePage(object):
     
     def img_screenshot(self, img_name):
         try:
-            self.driver.get_screenshot_as_file()
+            self.driver.get_screenshot_as_file(img_path+img_name+'.png')
         except:
             self.mylog.error('截图失败：'+img_name)
 
