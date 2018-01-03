@@ -1,3 +1,5 @@
+import sys
+sys.path.append("/home/ccjh/demo_git/sele_po_demo")
 from selenium.webdriver.common.by import By
 from src.common.base_page import BasePage
 from selenium.webdriver.common.action_chains import ActionChains

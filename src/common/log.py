@@ -1,5 +1,7 @@
+import sys
+sys.path.append("/home/ccjh/demo_git/sele_po_demo")
 import logging
-from src.config import parameter
+from config import parameter
 
 
 

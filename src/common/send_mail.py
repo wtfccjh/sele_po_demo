@@ -1,6 +1,8 @@
+import sys
+sys.path.append("/home/ccjh/demo_git/sele_po_demo")
 import os
 import smtplib
-from src.config import parameter
+from config import parameter
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import log

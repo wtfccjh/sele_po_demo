@@ -1,7 +1,9 @@
+import sys
+sys.path.append("/home/ccjh/demo_git/sele_po_demo")
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
-import log
-from src.config.parameter import img_path
+from src.common import log
+from config.parameter import img_path
 
 
 

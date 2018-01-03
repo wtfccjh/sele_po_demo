@@ -1,10 +1,8 @@
 import sys
-
-print(sys.path)
-
-
+sys.path.append("/home/ccjh/demo_git/sele_po_demo")
 import unittest
 from selenium import webdriver
+#from ....page.saas_page import SaasPage
 from src.page.saas_page import SaasPage
 from time import sleep
 from src.common import excel_data

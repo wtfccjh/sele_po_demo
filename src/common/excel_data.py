@@ -1,3 +1,5 @@
+import sys
+sys.path.append("/home/ccjh/demo_git/sele_po_demo")
 import xlrd
 from src.common import log
 from config.parameter import test_data_path
