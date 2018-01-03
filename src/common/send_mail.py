@@ -25,7 +25,7 @@ class send_mail:
         msg['From'] = parameter.email_name
         msg['To'] = parameter.email_To
         try:
-            server = smtplib.SMTP(parameter.smtp_server)
+            server = smtplib.SMTP(parameter.smtp_sever)
             server.login(parameter.email_name, parameter.email_password)
             server.sendmail(msg['From'],msg['To'].split(';'), msg.as_string())
             server.quit()
@@ -34,6 +34,6 @@ class send_mail:
     
     def sendReport(self):
         report_list = os.listdir(parameter.report_path)
-        report_list.sort(key=lambda fn: os.path.getmtime(gl.report_path+fn) if not os.path.isdir(gl.report_path+fn) else 0)
+        report_list.sort(key=lambda fn: os.path.getmtime(parameter.report_path+fn) if not os.path.isdir(parameter.report_path+fn) else 0)
         new_report = os.path.join(parameter.report_path, report_list[-1])
         self.email_init(new_report, report_list[-1])

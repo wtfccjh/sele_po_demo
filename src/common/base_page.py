@@ -1,7 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 import log
-from config.parameter import img_path
+from src.config.parameter import img_path
 
 
 

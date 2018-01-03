@@ -1,11 +1,12 @@
 import xlrd
 from src.common import log
-from src.config.parameter import test_data_path 
+from config.parameter import test_data_path
 
 
 
 
 class excel:
+    '''excel处理'''
     def __init__(self):
         self.mylog = log.log()
 
@@ -13,9 +14,9 @@ class excel:
         try:
             data = xlrd.open_workbook(file)
             return data
-        except Exception, e:
+        except Exception as e:
             self.mylog.error("error")
-    
+
     def excel_table(self, file, sheetName):
         data = self.open_excel(file)
         table = data.sheet_by_name(sheetName)
