@@ -1,5 +1,6 @@
 import sys
 sys.path.append("/home/ccjh/demo_git/sele_po_demo")
+print(sys.path)
 import logging
 from config import parameter
 

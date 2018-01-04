@@ -1,7 +1,7 @@
 import sys
 sys.path.append("/home/ccjh/demo_git/sele_po_demo")
 import xlrd
-from src.common import log
+from src.common import mylog
 from config.parameter import test_data_path
 
 
@@ -10,7 +10,7 @@ from config.parameter import test_data_path
 class excel:
     '''excel处理'''
     def __init__(self):
-        self.mylog = log.log()
+        self.mylog = mylog.log()
 
     def open_excel(self, file):
         try:

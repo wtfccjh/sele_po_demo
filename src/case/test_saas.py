@@ -22,6 +22,28 @@ class TestSaasLogin(unittest.TestCase):
         name_list = self.excel.get_list('username')
         password_list = self.excel.get_list('password')
         print(type(name_list))
+        for x in range(0, len(name_list)):
+            for y in range(0, len(password_list)):
+                username = name_list[x]
+                password = password_list[y]
+            try:
+                self.SaasPage.open()
+                self.SaasPage.input_name(username)
+                self.SaasPage.input_password(password)
+                self.SaasPage.click_login()
+            except Exception as e:
+                self.mylog.error('error ')
+                self.sogou_page.img_screenshot('error')
+                raise e
+
+    def tearDown(self):
+        self.driver.close()
+
+
+if __name__ == '__main__':
+    unittest.main()
+
+
 
 
 

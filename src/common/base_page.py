@@ -2,7 +2,7 @@ import sys
 sys.path.append("/home/ccjh/demo_git/sele_po_demo")
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
-from src.common import log
+from src.common import mylog
 from config.parameter import img_path
 
 
@@ -14,7 +14,7 @@ class BasePage(object):
         self.driver = selenium_driver
         self.url = base_url
         self.title = page_title
-        self.mylog = log.log()
+        self.mylog = mylog.log()
 
     def _open(self, url, page_title):
         try:
