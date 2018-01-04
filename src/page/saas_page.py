@@ -8,12 +8,12 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 
 
-class SaasPage(BasePage):
+class saas_page(BasePage):
     name_loc = (By.XPATH, '//*[@id="root"]/div/div[4]/div/div/div[1]/div/input')
     password_loc = (By.XPATH, '//*[@id="root"]/div/div[4]/div/div/div[2]/div/input')
     login_loc = (By.CLASS_NAME, 'button is-link is-outlined tile')
 
-    def open(self):
+    def openit(self):
         self._open(self.url, self.title)
 
     def input_name(self, name_loc):

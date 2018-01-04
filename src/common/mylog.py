@@ -7,7 +7,7 @@ from config import parameter
 
 
 
-class log:
+class mylog:
     def __init__(self):
         self.logname = "mylog"
 

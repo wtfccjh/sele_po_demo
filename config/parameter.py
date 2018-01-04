@@ -3,15 +3,16 @@ import time, os
 
 
 
-project_path = "F:\\sele_po_demo"
+project_path = "/home/ccjh/demo_git/sele_po_demo"
+#"F:\\sele_po_demo"
 #os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)[0]), '.'))
 print (project_path)
 # 测试用例代码存放路径（用于构建suite,注意该文件夹下的文件都应该以test开头命名）
-test_case_path = project_path+"\\src\\test_case"
+test_case_path = project_path+"/src/test_case"
 # excel测试数据文档存放路径
-test_data_path = project_path+"\\data\\testData.xlsx"
+test_data_path = project_path+"/data/testData.xlsx"
 # 日志文件存储路径
-log_path = project_path+"\\log\\mylog.log"
+log_path = project_path+"/log/mylog.log"
 print ('日志路径：'+log_path)
 # 测试报告存储路径，并以当前时间作为报告名称前缀
 report_path = project_path+"\\report\\"
