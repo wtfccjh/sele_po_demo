@@ -16,10 +16,10 @@ if __name__ =="__main__":
     runner = HTMLTestRunner.HTMLTestRunner(
         stream = fb,
         title = "test",
-        descripiton = "u know"
+        description = "u know"
     )
     runner.run(suite)
     fb.close()
-    time.sleep()
+    time.sleep(10)
     email = send_mail.send_mail()
     email.sendReport()

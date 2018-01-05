@@ -5,14 +5,13 @@ import smtplib
 from config import parameter
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-import log
-
+from src.common.mylog import mylog
 
 
 
 class send_mail:
     def __init__(self):
-        self.mylog = log.log()
+        self.mylog = mylog.mylog()
     
     def email_init(self, report, reportName):
         with open(report,'rb')as f:
@@ -32,7 +31,7 @@ class send_mail:
             server.sendmail(msg['From'],msg['To'].split(';'), msg.as_string())
             server.quit()
         except smtplib.SMTPException:
-            self.mylog.error('error'+__file__)
+            self.mylog.error('error_email'+__file__)
     
     def sendReport(self):
         report_list = os.listdir(parameter.report_path)

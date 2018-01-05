@@ -17,7 +17,7 @@ class excel:
             data = xlrd.open_workbook(file)
             return data
         except Exception as e:
-            self.mylog.error("error")
+            self.mylog.error("error_log2")
 
     def excel_table(self, file, sheetName):
         data = self.open_excel(file)

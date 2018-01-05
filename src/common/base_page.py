@@ -29,7 +29,7 @@ class BasePage(object):
     #   重写find_element方法，增加定位元素的健壮性
     def find_element(self, *loc):
         try:
-            WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(loc))
+            WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(loc))
             return self.driver.find_element(*loc)
         except:
             self.mylog.error(u'找不到元素:'+str(loc))
@@ -42,6 +42,8 @@ class BasePage(object):
                 self.find_element(*loc).send_keys(value)
         except AttributeError:
             self.mylog.error(u'输入失败,loc='+str(loc)+u';value='+value)
+
+
 
     #   截图
     def img_screenshot(self, img_name):
