@@ -26,5 +26,3 @@ class saas_page(BasePage):
     def click_login(self):
         self.find_element(*self.login_loc).click()
 
-    def toast_text(self):
-        self.find_element(*self.toast_loc).text

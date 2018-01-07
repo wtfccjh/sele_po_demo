@@ -33,8 +33,8 @@ class TestSaasLogin(unittest.TestCase):
                     self.saas_page.input_name(username)
                     self.saas_page.input_password(password)
                     self.saas_page.click_login()
-                    sleep(5)
-                    print(self.saas_page.toast_text())
+                    sleep(1)
+                    print(self.driver.find_element_by_xpath('//*[@id="root"]/div/div[4]/div/div/div[3]/span').text)
                 except Exception as e:
                     self.mylog.error('error_log ')
                     self.saas_page.img_screenshot('error_img')
