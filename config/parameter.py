@@ -3,7 +3,7 @@ import time, os
 
 
 
-project_path = "/home/ccjh/demo_git/sele_po_demo"
+project_path = "F:/sele_po_demo"
 #/home/ccjh/demo_git/sele_po_demo
 #"F:\\sele_po_demo"
 #os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)[0]), '.'))

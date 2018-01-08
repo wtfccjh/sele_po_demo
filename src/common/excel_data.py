@@ -25,6 +25,7 @@ class excel:
         Trows = table.nrows
         Tcolnames = table.row_values(0)
         lister = []
+
         for rownumber in range(1, Trows):
             row = table.row_values(rownumber)
             if row:
