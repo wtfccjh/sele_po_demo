@@ -21,15 +21,17 @@ class excel:
 
     def excel_table(self, file, sheetName):
         data = self.open_excel(file)
+        # 通过工作表名称，获取到一个工作表
         table = data.sheet_by_name(sheetName)
+        # 获取行数
         Trows = table.nrows
+        # 获取 第一行数据
         Tcolnames = table.row_values(0)
         lister = []
-
         for rownumber in range(1, Trows):
             row = table.row_values(rownumber)
             if row:
-                app={}
+                app = {}
                 for i in range(len(Tcolnames)):
                     app[Tcolnames[i]] = row[i]
                     lister.append(app)

@@ -29,8 +29,9 @@ class BasePage(object):
     #   重写find_element方法，增加定位元素的健壮性
     def find_element(self, *loc):
         try:
-            WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(loc))
+            #    WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(loc))
             return self.driver.find_element(*loc)
+            #self.driver.finf_element(*loc)
         except:
             self.mylog.error(u'找不到元素:'+str(loc))
 
