@@ -8,7 +8,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 
 
-class saas_page(BasePage):
+class login_page(BasePage):
     name_loc = (By.XPATH, '//*[@id="root"]/div/div[4]/div/div/div[1]/div/input')
     password_loc = (By.XPATH, '//*[@id="root"]/div/div[4]/div/div/div[2]/div/input')
     login_loc = (By.XPATH, '//*[@id="root"]/div/div[4]/div/div/div[3]/div/a')
@@ -26,5 +26,12 @@ class saas_page(BasePage):
     def click_login(self):
         self.find_element(*self.login_loc).click()
 
+
+class ShowAll_page(login_page):
+    tab_loc = (By.XPATH,'//*[@id="root"]/div/div[4]/section/div/div/aside/ul[1]/li/a')
+
+
+    def selected(self):
+        self.find_element(*self.tab_loc)
 
 
