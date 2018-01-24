@@ -6,6 +6,7 @@ from src.page.login_page import login_page
 from time import sleep
 from src.common import excel_data
 from src.common.mylog import mylog
+from src.common.page_url import url
 
 
 
@@ -14,7 +15,7 @@ class TestSaasLogin(unittest.TestCase):
     def setUp(self):
         self.mylog = mylog()
         self.driver = webdriver.Chrome()
-        self.url = 'https://tomorning.me:20001/login'
+        self.url = url.login_page
         self.login_page = login_page(self.driver, self.url, 'SaaS Web')
         self.excel = excel_data.excel()
 

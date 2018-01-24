@@ -2,6 +2,7 @@ import sys
 sys.path.append("/home/ccjh/demo_git/sele_po_demo")
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.common.action_chains import *
 from src.common import mylog
 from config.parameter import img_path
 
@@ -29,7 +30,7 @@ class BasePage(object):
     #   重写find_element方法，增加定位元素的健壮性
     def find_element(self, *loc):
         try:
-            #    WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(loc))
+            WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(loc))
             return self.driver.find_element(*loc)
             #self.driver.finf_element(*loc)
         except:
@@ -52,4 +53,12 @@ class BasePage(object):
             self.driver.get_screenshot_as_file(img_path+img_name+'.png')
         except:
             self.mylog.error(u'截图失败：'+img_name)
+
+    #   hover
+    def hover(self, *loc):
+        try:
+            ActionChains(self.driver).move_to_element(self.find_element(*loc)).perform()
+        except:
+            self.mylog.error('悬停失败')
+
 
