@@ -22,12 +22,12 @@ class BasePage(object):
         try:
             self.driver.get(url)
             self.driver.maximize_window()
-#           通过断言输入的title是否在当前title中
+    #断言titie
             assert page_title in self.driver.title, u'打开页面失败：%s' % url
         except:
             self.mylog.error(u'未能正确打开页面:'+url)
 
-    #   重写find_element方法，增加定位元素的健壮性
+    #封装定位
     def find_element(self, *loc):
         try:
             WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(loc))
@@ -36,7 +36,7 @@ class BasePage(object):
         except:
             self.mylog.error(u'找不到元素:'+str(loc))
 
-    #   重写send_keys方法
+    #封装输入
     def send_keys(self, value, clear=True, *loc):
         try:
             if clear:

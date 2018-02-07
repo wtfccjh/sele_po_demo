@@ -8,7 +8,6 @@ from config.parameter import test_data_path
 
 print(test_data_path)
 class excel:
-    '''excel处理'''
     def __init__(self):
         self.mylog = mylog.mylog()
 

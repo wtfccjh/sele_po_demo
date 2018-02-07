@@ -12,8 +12,6 @@ class mylog:
         self.logname = "mylog"
 
     def setMSG(self, level, msg):
-        # 之前把下面定义log的一大段代码写在了__init__里面，造成了日志重复输出
-        # 此大坑，谨记谨记！！！!
         logger = logging.getLogger()
         # 定义Handler输出到文件和控制台
         fh = logging.FileHandler(parameter.log_path)
@@ -35,7 +33,7 @@ class mylog:
             logger.warning(msg)
         elif level=='error':
             logger.error(msg)
-        # 移除句柄，否则日志会重复输出
+        # 移除句柄
         logger.removeHandler(fh)
         logger.removeHandler(ch)
         fh.close()
